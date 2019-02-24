@@ -1,0 +1,13 @@
+{
+  "name": "sign-attr",
+  "version": "1.0.0",
+  "description": "Pure javascript implementation of Indy Agent sign and verify attribute",
+  "main": "index.js",
+  "author": "Daniel Bluhm <daniel.bluhm@sovrin.org>",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "base-58": "0.0.1",
+    "libsodium": "^0.7.3",
+    "libsodium-wrappers": "^0.7.3"
+  }
+}
