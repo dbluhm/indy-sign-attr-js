@@ -17,10 +17,9 @@ exports.setup = (async() => {
         let timestamp_bytes = Buffer.alloc(8);
         timestamp_bytes.writeUInt32BE(Math.floor(new Date()/1000), 4);
 
-        attr_bytes = Buffer.from(JSON.stringify(attr), 'ascii');
-        sig_data_bytes = Buffer.concat([timestamp_bytes, attr_bytes]);
-
-        signature_bytes = sodium.crypto_sign_detached(sig_data_bytes, keys.privateKey);
+        let attr_bytes = Buffer.from(JSON.stringify(attr), 'ascii');
+        let sig_data_bytes = Buffer.concat([timestamp_bytes, attr_bytes]);
+        let signature_bytes = sodium.crypto_sign_detached(sig_data_bytes, keys.privateKey);
 
         return {
             "@type": "did:sov:BzCbsNYhMrjHiqZDTUASHg;spec/signature/1.0/ed25519Sha512_single",
